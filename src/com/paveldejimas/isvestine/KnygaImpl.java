@@ -8,7 +8,7 @@ public class KnygaImpl extends LeidinysImpl implements Knyga {
     private String tipas;
 
     public KnygaImpl(String pavadinimas, boolean kietaisVirseliais, String tipas, int puslapiuSkaicius) {
-        super("knyga", false, puslapiuSkaicius);
+        super("knyga", puslapiuSkaicius);
         this.pavadinimas = pavadinimas;
         this.kietaisVirseliais = kietaisVirseliais;
         this.tipas = tipas;
@@ -45,5 +45,11 @@ public class KnygaImpl extends LeidinysImpl implements Knyga {
     @Override
     public void setTipas(String tipas) {
         this.tipas = tipas;
+    }
+
+    @Override
+    public String toString() {
+        String virselis = kietaisVirseliais ? "kietu viršeliu" : "minkštu viršeliu";
+        return String.format("%s, \"%s\", %s , %s", super.toString(), pavadinimas, virselis, tipas);
     }
 }

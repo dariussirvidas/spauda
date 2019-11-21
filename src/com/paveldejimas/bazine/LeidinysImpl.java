@@ -18,9 +18,7 @@ public class LeidinysImpl implements Leidinys {
     public LeidinysImpl(String rusis) {
         this(rusis, false, 1);
     }
-    public LeidinysImpl(int puslapiuSkaicius) {
-        this("knyga", false, puslapiuSkaicius);
-    }
+
 
     public String getRusis() {
         return rusis;
@@ -44,5 +42,11 @@ public class LeidinysImpl implements Leidinys {
 
     public void setPuslapiuSkaicius(int puslapiuSkaicius) {
         this.puslapiuSkaicius = puslapiuSkaicius;
+    }
+
+    @Override
+    public String toString() {
+        String periodic = periodinis ? "periodinis" : "neperiodinis";
+        return String.format("%s, %s, %d puslapiai", rusis, periodic, puslapiuSkaicius);
     }
 }
