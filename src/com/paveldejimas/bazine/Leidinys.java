@@ -3,7 +3,7 @@ package com.paveldejimas.bazine;
 public interface Leidinys {
     String getRusis();
     void setRusis(String rusis);
-    boolean getPeriodinis();
+    boolean isPeriodinis();
     void setPeriodinis(boolean periodinis);
     int getPuslapiuSkaicius();
 }

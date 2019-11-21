@@ -1,6 +1,6 @@
 package com.paveldejimas.bazine;
 
-public class LeidinysImpl {
+public class LeidinysImpl implements Leidinys {
     private String rusis;
     private boolean periodinis;
     private int puslapiuSkaicius;
@@ -17,6 +17,9 @@ public class LeidinysImpl {
 
     public LeidinysImpl(String rusis) {
         this(rusis, false, 1);
+    }
+    public LeidinysImpl(int puslapiuSkaicius) {
+        this("knyga", false, puslapiuSkaicius);
     }
 
     public String getRusis() {
